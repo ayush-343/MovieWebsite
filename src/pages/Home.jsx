@@ -24,10 +24,27 @@ function Home() {
     loadPopularMovies();
   }, []);
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
-    alert(searchQuery);
-    setSearchQuery("--");
+    //remove leading and trailing spaces from the search query
+    if (!searchQuery.trim()) {
+      return;
+    }
+    if (loading) {
+      return;
+    }
+    setLoading(true);
+    try {
+      const searchResults = await SearchMovies(searchQuery);
+      setError(null);
+      setMovies(searchResults);
+    } catch (error) {
+      console.log(error);
+      setError("Failed to fetch search results. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+    setSearchQuery("");
   };
 
   return (
