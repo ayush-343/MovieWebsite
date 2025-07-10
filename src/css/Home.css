@@ -61,3 +61,21 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+@media (max-width: 639px) {
+  .search-input {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .search-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}

@@ -38,10 +38,12 @@
   );
   opacity: 0;
   transition: opacity 0.2s;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 1rem;
+  pointer-events: none; /* 👈 This allows clicks to pass through */
 }
 
 .movie-card:hover .movie-overlay {
