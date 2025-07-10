@@ -1,3 +1,4 @@
+import "../css/MovieCard.css"; // Assuming you have a CSS file for styling
 function MovieCard({ movie }) {
   function onFaveriteClick() {
     alert(`You clicked on ${movie.title}`);
